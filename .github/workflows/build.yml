@@ -83,7 +83,6 @@ jobs:
       - name: Upload VSIX
         uses: actions/upload-artifact@v4
         with:
-          name: vscode-wpf-vsix
           path: "*.vsix"
           if-no-files-found: error
           retention-days: 14
