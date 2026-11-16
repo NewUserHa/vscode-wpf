@@ -160,7 +160,7 @@ $tfms = @()
 if ($doModern) { $tfms += $TargetFramework }
 if ($doLegacy) { $tfms += $LegacyTfm }
 $TargetFrameworksArg = [string]::Join(';', $tfms)
-
+$TargetFrameworksArg = $TargetFrameworksArg.Replace(';', '%3B')
 Setup-DotnetEnv $DotnetPath
 
 Write-Host ""
