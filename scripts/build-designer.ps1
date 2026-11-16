@@ -198,7 +198,7 @@ Write-Host "Running: dotnet build ..." -ForegroundColor Yellow
     -maxcpucount:1 `
     -p:UseSharedCompilation=false `
     "-p:XamlDesignerDefaultTargetFrameworks=$TargetFrameworksArg" `
-    "-p:EnableWindowsTargeting=true"
+    "-p:EnableWindowsTargeting=true"     -bl:designer.binlog -v:diag
 if ($LASTEXITCODE -ne 0) { Write-Error "Build failed with exit code $LASTEXITCODE."; exit $LASTEXITCODE }
 
 function Publish-DesignerOutput {
