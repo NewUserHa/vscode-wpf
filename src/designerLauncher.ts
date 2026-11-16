@@ -16,7 +16,7 @@ export interface BuildResult {
 const DESIGNER_TFM_FILE = 'designer.tfm';
 const MODERN_DESIGNER_DIR = 'XamlDesigner';
 const LEGACY_DESIGNER_DIR = 'XamlDesignerLegacy';
-const DEFAULT_LIBREWPF_TFM = 'net10.0-windows';
+const DEFAULT_LIBREWPF_TFM = 'net11.0-windows';
 
 let outputChannel: vscode.OutputChannel | undefined;
 

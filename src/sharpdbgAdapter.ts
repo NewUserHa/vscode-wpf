@@ -41,7 +41,7 @@ export function resolveSharpDbgAdapter(isFramework?: boolean, sessionConfig?: an
   const cfg = vscode.workspace.getConfiguration('sharpdbg');
   const adapterExecutableSetting = cfg.get<string>('adapterExecutable');
   const adapterArgsSetting = cfg.get<string[]>('adapterArgs') ?? [];
-  const cliDllSetting = cfg.get<string>('cliDllPath') ?? 'dist/sharpdbg/net10.0/SharpDbg.Cli.dll';
+  const cliDllSetting = cfg.get<string>('cliDllPath') ?? 'dist/sharpdbg/net11.0/SharpDbg.Cli.dll';
   const dotnetPath = cfg.get<string>('dotnetPath') ?? 'dotnet';
   const adapterCwdSetting = cfg.get<string>('adapterCwd');
   const adapterEnvSetting = cfg.get<Record<string, string>>('adapterEnv');

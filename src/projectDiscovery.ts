@@ -199,7 +199,7 @@ export function parseProject(projectPath: string): { projectName: string; target
   const projectDir = path.dirname(projectPath);
   const projectName = path.basename(projectPath, path.extname(projectPath));
 
-  let targetFramework = 'net10.0-windows';
+  let targetFramework = 'net11.0-windows';
   let outputPathOverride: string | null = null;
 
   try {

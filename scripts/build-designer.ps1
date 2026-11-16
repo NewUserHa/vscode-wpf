@@ -130,7 +130,7 @@ function Stop-ConflictingDesignerProcesses {
 }
 
 if (-not $TargetFramework) {
-    $TargetFramework = 'net10.0-windows'
+    $TargetFramework = 'net11.0-windows'
     Write-Host "  TargetFramework : $TargetFramework (default for LibreWPF)" -ForegroundColor DarkGray
 } else {
     Write-Host "  TargetFramework : $TargetFramework (explicit)" -ForegroundColor DarkGray

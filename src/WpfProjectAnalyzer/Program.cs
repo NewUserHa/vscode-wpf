@@ -354,7 +354,7 @@ internal static class Program
                 result.WindowsTargetingStatus = "missing_tfm";
                 suggestions.Add(
                     "Your project sets <UseWPF>true</UseWPF> but the TargetFramework does not include " +
-                    "the -windows suffix. Consider changing to e.g. net10.0-windows.");
+                    "the -windows suffix. Consider changing to e.g. net11.0-windows.");
             }
             else
             {
