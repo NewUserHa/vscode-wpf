@@ -71,7 +71,7 @@ function Setup-DotnetEnv {
     }
 
     $env:DOTNET_HOST_PATH = $Dotnet
-    $sdkDir = Get-ChildItem -Path (Join-Path $env:DOTNET_ROOT "sdk") -Directory | Sort-Object Name | Select-Object -Last 1
+    $sdkDir = Get-ChildItem -Path (Join-Path $env:DOTNET_ROOT "sdk") -Directory | Sort-Object { [version]$_.Name } | Select-Object -Last 1
     if ($sdkDir) {
         $env:MSBuildSDKsPath = Join-Path $sdkDir.FullName "Sdks"
         $env:MSBuildExtensionsPath = $sdkDir.FullName
