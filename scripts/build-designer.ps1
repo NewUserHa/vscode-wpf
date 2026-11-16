@@ -232,6 +232,7 @@ function Publish-DesignerOutput {
     }
 }
 
+Write-Host "$Tfm build $TargetFramework" -ForegroundColor Green
 if ($doModern) {
     Publish-DesignerOutput -Tfm $TargetFramework -Destination $OutputDir -TfmFilePath $TfmFile
 }
