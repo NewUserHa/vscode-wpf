@@ -36,10 +36,21 @@ if (-not $ver) {
         try {
             $Tag = (git describe --tags --abbrev=0).Trim()
         } catch {
-            Fail 'Failed to determine latest git tag. Create a tag like v1.0.0 and retry, or install GitVersion.'
+            Write-Warning 'No Git tag found. Keeping package.json version.'
         }
     }
-    if ($Tag.StartsWith('v')) { $ver = $Tag.Substring(1) } else { $ver = $Tag }
+
+    if (-not [string]::IsNullOrWhiteSpace($Tag)) {
+        if ($Tag.StartsWith('v')) {
+            $ver = $Tag.Substring(1)
+        } else {
+            $ver = $Tag
+        }
+    } else {
+        $pkgPath = Join-Path $here 'package.json'
+        $pkg = Get-Content $pkgPath -Raw | ConvertFrom-Json
+        $ver = $pkg.version
+    }
 }
 
 if (-not ($ver -match '^[0-9]+\.[0-9]+\.[0-9]+(?:[-+].*)?$')) {
