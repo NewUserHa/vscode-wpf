@@ -1,6 +1,6 @@
 [submodule "external/WpfDesigner"]
 	path = external/WpfDesigner
-	url = https://github.com/lextudio/WpfDesigner
+	url = https://github.com/NewUserHa/WpfDesigner
 	branch = vscode
 [submodule "external/wxsg"]
 	path = external/wxsg
